@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # community
 
 ## Project setup
@@ -27,3 +28,7 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+=======
+# whlt
+文化礼堂
+>>>>>>> daa8e4844922d7dd36d0d34882af4e735fe13cb5
