@@ -1,6 +1,6 @@
 <template>
   <div id="article" class="article">
-    <p style="font-size:54px">{{ title }}</p>
+    <p class="title">{{ title }}</p>
     <div class="top">
       <img :src="icon" class="icon" alt="" />
       <div>
@@ -27,13 +27,13 @@
 }
 
 .futext {
-  font-size: 16PX; /*no*/
+  font-size: 16px; /*no*/
   [data-dpr="2"] & {
-    font-size: 32PX; /*no*/
+    font-size: 32px; /*no*/
   }
 
   [data-dpr="3"] & {
-    font-size: 48PX; /*no*/
+    font-size: 48px; /*no*/
   }
 }
 </style>
@@ -46,13 +46,13 @@
 
 .title {
   color: #444;
-  font-size: 18PX; /*no*/
+  font-weight: bold;
+  font-size: 16px; /*no*/
   [data-dpr="2"] & {
-    font-size: 36PX; /*no*/
+    font-size: 32px; /*no*/
   }
-
   [data-dpr="3"] & {
-    font-size: 54PX; /*no*/
+    font-size: 48px; /*no*/
   }
 }
 
@@ -71,23 +71,23 @@
 
   .editor {
     color: #101010;
-    font-size: 14PX; /*no*/
+    font-size: 14px; /*no*/
     [data-dpr="2"] & {
-      font-size: 28PX; /*no*/
+      font-size: 28px; /*no*/
     }
     [data-dpr="3"] & {
-      font-size: 42PX; /*no*/
+      font-size: 42px; /*no*/
     }
   }
 
   .time {
     color: #b1b1b1;
-    font-size: 12PX; /*no*/
+    font-size: 12px; /*no*/
     [data-dpr="2"] & {
-      font-size: 24PX; /*no*/
+      font-size: 24px; /*no*/
     }
     [data-dpr="3"] & {
-      font-size: 36PX; /*no*/
+      font-size: 36px; /*no*/
     }
   }
 }
@@ -95,13 +95,13 @@
 .content {
   .text {
     color: #444;
-    font-size: 16PX; /*no*/
+    text-indent: 2em;
+    font-size: 14px; /*no*/
     [data-dpr="2"] & {
-      font-size: 32PX; /*no*/
+      font-size: 28px; /*no*/
     }
-
     [data-dpr="3"] & {
-      font-size: 48PX; /*no*/
+      font-size: 42px; /*no*/
     }
   }
 
@@ -136,7 +136,7 @@ export default {
       // isShare: false,
       // showFlag: true,
       // comment: "",
-      shareImg: "",
+      shareImg: ""
       // isDis: 0
     };
   },
@@ -217,7 +217,6 @@ export default {
     //         // 用户取消分享后执行的回调函数
     //       }
     //     });
-
     //     wx.updateTimelineShareData({
     //       title: that.title + "-金华晚报", // 分享标题
     //       link: siteUrl + "/topicInfo?id=" + that.topicId, // 分享链接
