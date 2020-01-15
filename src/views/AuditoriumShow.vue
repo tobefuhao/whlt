@@ -1,6 +1,6 @@
 <template>
   <div id="auditorium" class="auditorium">
-    <!-- <van-image width="100%" height="300" src="img/4.png" /> -->
+    <van-image width="100%" src="/img/top.png" />
     <AreaList :step="1" @town="getTown" @village="getVillage"></AreaList>
     <van-button type="primary" class="confirm" @click="submit">确定</van-button>
     <AuditoriumList :villageId="villageId" ref="child"></AuditoriumList>
