@@ -2,28 +2,32 @@
   "name": "community",
   "version": "0.1.0",
   "private": true,
+  "description": "```\r npm install\r ```",
+  "author": "",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "test": "vue-cli-service build --mode test",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "test": "vue-cli-service build --mode test"
   },
+  "main": ".eslintrc.js",
   "dependencies": {
-    "axios": "^0.19.0",
-    "core-js": "^2.6.10",
+    "axios": "^0.19.1",
+    "core-js": "^3.4.4",
     "lib-flexible": "^0.3.2",
     "mescroll.js": "^1.4.1",
     "register-service-worker": "^1.6.2",
-    "vant": "^2.2.7",
-    "vue": "^2.6.10",
+    "sass-loader": "^8.0.2",
+    "vant": "^2.4.2",
+    "vue": "^2.6.11",
     "vue-axios": "^2.1.5",
-    "vue-router": "^3.1.3",
-    "vuex": "^3.1.1"
+    "vue-router": "^3.1.4",
+    "vuex": "^3.1.2"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.12.0",
-    "@vue/cli-plugin-eslint": "^3.12.0",
-    "@vue/cli-plugin-pwa": "^3.12.0",
+    "@vue/cli-plugin-babel": "^4.1.2",
+    "@vue/cli-plugin-eslint": "^4.1.2",
+    "@vue/cli-plugin-pwa": "^4.1.2",
     "@vue/cli-service": "^4.1.2",
     "@vue/eslint-config-prettier": "^4.0.1",
     "babel-eslint": "^10.0.3",
@@ -31,12 +35,8 @@
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.2.3",
     "postcss-px2rem": "^0.3.0",
-    "sass": "^1.23.0",
-    "sass-loader": "^7.3.1",
-    "vue-template-compiler": "^2.5.21"
+    "sass": "^1.24.4",
+    "vue-template-compiler": "^2.6.11"
   },
-  "description": "```\r npm install\r ```",
-  "main": ".eslintrc.js",
-  "author": "",
   "license": "ISC"
 }

@@ -95,13 +95,14 @@
 .content {
   .text {
     color: #444;
-    text-indent: 2em;
+    text-indent: 4em;
+    margin: 8px 0;
     font-size: 14px; /*no*/
     [data-dpr="2"] & {
-      font-size: 28px; /*no*/
+      font-size: 16px; /*no*/
     }
     [data-dpr="3"] & {
-      font-size: 42px; /*no*/
+      font-size: 20px; /*no*/
     }
   }
 
