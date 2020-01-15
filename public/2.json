@@ -1,0 +1,22 @@
+[
+    {
+      "hobbyId": 1,
+      "name": "工作咨询",
+      "img": "[{\"url\":\"img/1.jpeg\"}]"
+    },
+    {
+      "hobbyId": 2,
+      "name": "实时动态",
+      "img": "[{\"url\":\"img/2.jpeg\"}]"
+    },
+    {
+      "hobbyId": 3,
+      "name": "礼堂展示",
+      "img": "[{\"url\":\"img/3.jpeg\"}]"
+    },
+    {
+      "hobbyId": 4,
+      "name": "指数排行",
+      "img": "[{\"url\":\"img/5.jpg\"}]"
+    }
+]

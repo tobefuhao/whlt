@@ -1,0 +1,138 @@
+/* common */
+
+html,
+body,
+div,
+form,
+p,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+img,
+table,
+td,
+th,
+input,
+span,
+section,
+header,
+footer,
+nav,
+article,
+aside,
+fieldset,
+textarea,
+dl,
+dt,
+dd,
+blockquote,
+ul,
+ol {
+    margin: 0 0;
+    padding: 0 0;
+}
+
+section,
+header,
+footer,
+nav,
+article,
+aside {
+    display: block;
+}
+
+body {
+    // font-size: 12px;
+    background-color: #f4f4f5;
+    color: #252525;
+    // background-position: center top;
+    // background-repeat: no-repeat;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+caption,
+th {
+    text-align: left;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+ins,
+em,
+th,
+var {
+    font-weight: normal;
+    font-style: normal;
+}
+
+input,
+textarea {
+    font-size: 12px;
+    padding: 2px;
+}
+
+img {
+    // vertical-align: top;
+    border-width: 0;
+    display: block;
+    margin: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+textarea {
+    overflow: auto;
+}
+
+a {
+    color: #222222;
+    text-decoration: none;
+    display: block;
+}
+
+a:hover {
+    text-decoration: none !important;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+    overflow: hidden;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+.text-over {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
