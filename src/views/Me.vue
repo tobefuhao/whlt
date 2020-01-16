@@ -53,7 +53,7 @@
     }
 
     [data-dpr="3"] & {
-      font-size: 52PX; /*no*/
+      font-size: 48PX; /*no*/
     }
   }
 
@@ -72,7 +72,7 @@
       }
 
       [data-dpr="3"] & {
-        font-size: 52PX; /*no*/
+        font-size: 48PX; /*no*/
       }
     }
 
@@ -84,7 +84,7 @@
       }
 
       [data-dpr="3"] & {
-        font-size: 40PX; /*no*/
+        font-size: 36PX; /*no*/
       }
     }
   }
@@ -107,7 +107,7 @@
       }
 
       [data-dpr="3"] & {
-        font-size: 46PX; /*no*/
+        font-size: 42PX; /*no*/
       }
     }
   }

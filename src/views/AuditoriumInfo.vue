@@ -1,5 +1,9 @@
 <template>
   <div class="auditoriumInfo">
+    <div class="loading" v-show="flag">
+      <img src="@assets/images/4.jpg" alt="" />
+      <p class="countDown">{{ countDown }}S</p>
+    </div>
     <img src="img/top.jpg" class="top" alt="" />
     <ul class="nav clearfix">
       <li>最新动态</li>
@@ -40,6 +44,34 @@
 </template>
 
 <style lang="scss" scoped>
+.loading {
+  position: relative;
+  img {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+}
+.countDown {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  background: rgba($color: #000000, $alpha: 0.3);
+  border-radius: 5px;
+  width: 70px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  color: #fff;
+  font-size: 16PX; /*no*/
+  [data-dpr="2"] & {
+    font-size: 32PX; /*no*/
+  }
+  [data-dpr="3"] & {
+    font-size: 48PX; /*no*/
+  }
+}
+
 .top {
   width: 100%;
 }
@@ -135,6 +167,8 @@
 export default {
   data() {
     return {
+      flag: true,
+      countDown: "5",
       list: [],
       show: false,
       info: {
@@ -146,6 +180,12 @@ export default {
   },
   mounted() {
     this.auditorium();
+    setInterval(() => {
+      this.countDown--;
+    }, 1000);
+    setTimeout(() => {
+      this.flag = false;
+    }, 5000);
   },
   methods: {
     auditorium() {

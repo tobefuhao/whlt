@@ -1,12 +1,6 @@
 <template>
   <div class="editArea">
-    <AreaList
-      :step="1"
-      @town="getTown"
-      @street="getStreet"
-      @community="getCommunity"
-      @village="getVillage"
-    ></AreaList>
+    <AreaList :step="1" @town="getTown" @village="getVillage"></AreaList>
     <van-button type="primary" class="confirm" @click="submit">确定</van-button>
   </div>
 </template>
@@ -20,13 +14,12 @@
 .confirm {
   display: block;
   margin: 32px auto;
-  width: 150px;
-  font-size: 18PX; /*no*/
+  font-size: 16PX; /*no*/
   [data-dpr="2"] & {
-    font-size: 36PX; /*no*/
+    font-size: 32PX; /*no*/
   }
   [data-dpr="3"] & {
-    font-size: 54PX; /*no*/
+    font-size: 48PX; /*no*/
   }
 }
 </style>
@@ -52,14 +45,7 @@ export default {
   },
   methods: {
     getTown(val) {
-      console.log(val);
       this.townId = val;
-    },
-    getStreet(val) {
-      this.streetId = val;
-    },
-    getCommunity(val) {
-      this.communityId = val;
     },
     getVillage(val) {
       this.villageId = val;
@@ -69,23 +55,11 @@ export default {
       let form = {};
       if (!this.townId) {
         this.$dialog.alert({
-          message: "请选择市"
+          message: "请选择镇"
         });
         return;
       }
-      if (!this.streetId) {
-        this.$dialog.alert({
-          message: "请选择区"
-        });
-        return;
-      }
-      if (!this.communityId) {
-        this.$dialog.alert({
-          message: "请选择县"
-        });
-        return;
-      }
-      if (!this.villageId && this.userType != "2") {
+      if (!this.villageId) {
         this.$dialog.alert({
           message: "请选择村"
         });

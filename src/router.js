@@ -115,6 +115,16 @@ export default new Router({
       }
     },
     {
+      path: "/townInfo",
+      name: "townInfo",
+      component: resolve => require(["./views/TownInfo.vue"], resolve),
+
+      meta: {
+        title: "文化礼堂",
+        isLogin: true
+      }
+    },
+    {
       path: "/",
       // component: resolve => require(["./views/Login.vue"], resolve),
       component: resolve => require(["./views/Loading.vue"], resolve),
