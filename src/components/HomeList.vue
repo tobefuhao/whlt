@@ -99,19 +99,19 @@
   .news-item-left {
     display: inline-block;
     vertical-align: top;
-    width: 275px;
+    width: 265px;
 
     .info-top {
       position: relative;
       display: flex;
       align-items: center;
-      font-size: 12px; /*no*/
+      font-size: 12PX; /*no*/
       [data-dpr="2"] & {
-        font-size: 24px; /*no*/
+        font-size: 24PX; /*no*/
       }
 
       [data-dpr="3"] & {
-        font-size: 36px; /*no*/
+        font-size: 36PX; /*no*/
       }
 
       .icon {
@@ -133,14 +133,14 @@
 
     .title {
       color: #323233;
-      // height: 50px;
-      font-size: 12px; /*no*/
+      height: 45px;
+      font-size: 14PX; /*no*/
       [data-dpr="2"] & {
-        font-size: 24px; /*no*/
+        font-size: 28PX; /*no*/
       }
 
       [data-dpr="3"] & {
-        font-size: 36px; /*no*/
+        font-size: 42PX; /*no*/
       }
 
       margin-bottom: 6px;
@@ -149,9 +149,10 @@
 
   .news-item-right {
     display: inline-block;
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
     margin-left: 10px;
+    margin-top: 12px;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -162,13 +163,13 @@
     align-items: center;
     justify-content: space-between;
     color: #acacac;
-    font-size: 12px; /*no*/
+    font-size: 12PX; /*no*/
     [data-dpr="2"] & {
-      font-size: 24px; /*no*/
+      font-size: 24PX; /*no*/
     }
 
     [data-dpr="3"] & {
-      font-size: 36px; /*no*/
+      font-size: 36PX; /*no*/
     }
 
     span {

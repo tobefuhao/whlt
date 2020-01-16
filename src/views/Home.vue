@@ -36,16 +36,16 @@
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .home {
   background: #eee;
-  font-size: 12px; /*no*/
+  font-size: 12PX; /*no*/
   [data-dpr="2"] & {
-    font-size: 24px; /*no*/
+    font-size: 24PX; /*no*/
   }
 
   [data-dpr="3"] & {
-    font-size: 36px; /*no*/
+    font-size: 36PX; /*no*/
   }
 
   // & > .content {
@@ -70,7 +70,7 @@
   align-items: center;
   justify-content: space-around;
   background: #fff;
-  margin: 12px 0;
+  margin-bottom: 5px;
   padding: 8px 0;
 
   .icon {

@@ -1,6 +1,6 @@
 <template>
   <div class="auditoriumInfo">
-    <img src="/img/top.jpg" class="top" alt="" />
+    <img src="img/top.jpg" class="top" alt="" />
     <ul class="nav clearfix">
       <li>最新动态</li>
       <li @click="show = true">基本介绍</li>
@@ -51,12 +51,12 @@
     width: 93px;
     text-align: center;
     line-height: 30px;
-    font-size: 14px; /*no*/
+    font-size: 14PX; /*no*/
     [data-dpr="2"] & {
-      font-size: 28px; /*no*/
+      font-size: 28PX; /*no*/
     }
     [data-dpr="3"] & {
-      font-size: 42px; /*no*/
+      font-size: 42PX; /*no*/
     }
     &:not(:last-child) {
       border-right: 1px solid #fff;
@@ -69,12 +69,12 @@
   margin: 8px;
   .title {
     margin-bottom: 10px;
-    font-size: 16px; /*no*/
+    font-size: 16PX; /*no*/
     [data-dpr="2"] & {
-      font-size: 18px; /*no*/
+      font-size: 32PX; /*no*/
     }
     [data-dpr="3"] & {
-      font-size: 30px; /*no*/
+      font-size: 48PX; /*no*/
     }
   }
   .imgList img {
@@ -85,22 +85,22 @@
   .info {
     .name {
       float: left;
-      font-size: 14px; /*no*/
+      font-size: 14PX; /*no*/
       [data-dpr="2"] & {
-        font-size: 28px; /*no*/
+        font-size: 28PX; /*no*/
       }
       [data-dpr="3"] & {
-        font-size: 42px; /*no*/
+        font-size: 42PX; /*no*/
       }
     }
     .time {
       float: right;
-      font-size: 14px; /*no*/
+      font-size: 14PX; /*no*/
       [data-dpr="2"] & {
-        font-size: 28px; /*no*/
+        font-size: 28PX; /*no*/
       }
       [data-dpr="3"] & {
-        font-size: 42px; /*no*/
+        font-size: 42PX; /*no*/
       }
     }
   }
@@ -108,24 +108,24 @@
 .van-action-sheet__header {
   font-weight: bold;
   & p {
-    font-size: 18px; /*no*/
+    font-size: 18PX; /*no*/
     [data-dpr="2"] & {
-      font-size: 25px; /*no*/
+      font-size: 36PX; /*no*/
     }
     [data-dpr="3"] & {
-      font-size: 40px; /*no*/
+      font-size: 54PX; /*no*/
     }
   }
 }
 .van-action-sheet__content {
   padding: 0px 16px;
   & p {
-    font-size: 16px; /*no*/
+    font-size: 16PX; /*no*/
     [data-dpr="2"] & {
-      font-size: 25px; /*no*/
+      font-size: 32PX; /*no*/
     }
     [data-dpr="3"] & {
-      font-size: 42px; /*no*/
+      font-size: 48PX; /*no*/
     }
   }
 }

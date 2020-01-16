@@ -18,14 +18,13 @@
       </van-tab>
     </van-tabs>
     <van-button type="primary" class="btnInfo" @click="btnClick"
-      >头条
+      >首页
     </van-button>
   </div>
 </template>
 <style lang="scss">
 .lm {
-  padding-top: 16px;
-  margin-bottom: 50px;
+  margin-bottom: 15px;
 
   .van-tabs__wrap {
     background: #fff;

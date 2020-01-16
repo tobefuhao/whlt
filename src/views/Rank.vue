@@ -30,13 +30,13 @@
   color: #ababab;
   background: #fff;
   padding: 10px 0;
-  font-size: 14px; /*no*/
+  font-size: 14PX; /*no*/
   [data-dpr="2"] & {
-    font-size: 28px; /*no*/
+    font-size: 28PX; /*no*/
   }
 
   [data-dpr="3"] & {
-    font-size: 42px; /*no*/
+    font-size: 42PX; /*no*/
   }
 }
 .item {
@@ -44,13 +44,13 @@
   width: 90%;
   margin: auto;
   border-bottom: 1px solid #ccc;
-  font-size: 14px; /*no*/
+  font-size: 14PX; /*no*/
   [data-dpr="2"] & {
-    font-size: 28px; /*no*/
+    font-size: 28PX; /*no*/
   }
 
   [data-dpr="3"] & {
-    font-size: 42px; /*no*/
+    font-size: 42PX; /*no*/
   }
 }
 .no {

@@ -1,6 +1,6 @@
 <template>
   <div id="auditorium" class="auditorium">
-    <van-image width="100%" src="/img/top.png" />
+    <van-image width="100%" src="img/top.png" />
     <AreaList :step="1" @town="getTown" @village="getVillage"></AreaList>
     <van-button type="primary" class="confirm" @click="submit">确定</van-button>
     <AuditoriumList :villageId="villageId" ref="child"></AuditoriumList>
@@ -12,12 +12,12 @@
   display: block;
   margin: 32px auto;
   width: 100px;
-  font-size: 16px; /*no*/
+  font-size: 16PX; /*no*/
   [data-dpr="2"] & {
-    font-size: 32px; /*no*/
+    font-size: 32PX; /*no*/
   }
   [data-dpr="3"] & {
-    font-size: 48px; /*no*/
+    font-size: 48PX; /*no*/
   }
 }
 </style>

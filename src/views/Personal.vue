@@ -79,12 +79,12 @@
     justify-content: flex-end;
     align-items: center;
     background: #fff;
-    font-size: 14px; /*no*/
+    font-size: 14PX; /*no*/
     [data-dpr="2"] & {
-      font-size: 28px; /*no*/
+      font-size: 28PX; /*no*/
     }
     [data-dpr="3"] & {
-      font-size: 46px; /*no*/
+      font-size: 46PX; /*no*/
     }
     p:first-child {
       color: #486a98;
@@ -97,7 +97,7 @@
       padding: 3px 6px;
       color: #486a98;
       border: 1px solid #3792d2; /*no*/
-      border-radius: 5px; /*no*/
+      border-radius: 5PX; /*no*/
     }
   }
   .name {
@@ -105,24 +105,24 @@
     padding-left: 15px;
     padding-bottom: 6px;
     background: #fff;
-    font-size: 18px; /*no*/
+    font-size: 18PX; /*no*/
     [data-dpr="2"] & {
-      font-size: 36px; /*no*/
+      font-size: 36PX; /*no*/
     }
     [data-dpr="3"] & {
-      font-size: 60px; /*no*/
+      font-size: 60PX; /*no*/
     }
   }
   .number {
     padding-left: 15px;
     color: #a6a6a5;
     background: #fff;
-    font-size: 14px; /*no*/
+    font-size: 14PX; /*no*/
     [data-dpr="2"] & {
-      font-size: 28px; /*no*/
+      font-size: 28PX; /*no*/
     }
     [data-dpr="3"] & {
-      font-size: 46px; /*no*/
+      font-size: 46PX; /*no*/
     }
     span {
       color: #436795;
@@ -142,12 +142,12 @@
       padding-bottom: 3px;
       margin-left: 15px;
       display: inline-block;
-      font-size: 14px; /*no*/
+      font-size: 14PX; /*no*/
       [data-dpr="2"] & {
-        font-size: 28px; /*no*/
+        font-size: 28PX; /*no*/
       }
       [data-dpr="3"] & {
-        font-size: 46px; /*no*/
+        font-size: 46PX; /*no*/
       }
     }
     .dynamic-list {
@@ -162,23 +162,23 @@
       p:first-child {
         margin-bottom: 4px;
         color: #212121;
-        font-size: 16px; /*no*/
+        font-size: 16PX; /*no*/
         [data-dpr="2"] & {
-          font-size: 32px; /*no*/
+          font-size: 32PX; /*no*/
         }
         [data-dpr="3"] & {
-          font-size: 52px; /*no*/
+          font-size: 52PX; /*no*/
         }
       }
       p:last-child {
         text-align: right;
         margin-top: 2px;
-        font-size: 12px; /*no*/
+        font-size: 12PX; /*no*/
         [data-dpr="2"] & {
-          font-size: 24px; /*no*/
+          font-size: 24PX; /*no*/
         }
         [data-dpr="3"] & {
-          font-size: 40px; /*no*/
+          font-size: 40PX; /*no*/
         }
         span {
           margin-right: 6px;
@@ -190,12 +190,12 @@
   .empty {
     text-align: center;
     margin-top: 150px;
-    font-size: 16px; /*no*/
+    font-size: 16PX; /*no*/
     [data-dpr="2"] & {
-      font-size: 32px; /*no*/
+      font-size: 32PX; /*no*/
     }
     [data-dpr="3"] & {
-      font-size: 52px; /*no*/
+      font-size: 52PX; /*no*/
     }
   }
 }
