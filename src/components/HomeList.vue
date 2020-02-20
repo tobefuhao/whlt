@@ -1,181 +1,93 @@
 <template>
   <div id="news-list" class="news-list">
-    <van-list
-      v-model="loading"
-      :finished="finished"
-      finished-text="没有更多了"
-      :error.sync="error"
-      error-text="请求失败，点击重新加载"
-      @load="onLoad"
-    >
-      <van-cell
-        class="news-item"
-        v-for="(item, index) in list"
+    <van-pull-refresh v-model="isLoading" @refresh="onRefresh">
+      <div
+        class="item-wrapper"
+        v-for="(item, index) in channelList"
         :key="index"
-        @click="article(item.topicId)"
       >
-        <img
-          src="../assets/images/istop.png"
-          class="istop"
-          v-if="item.is_top == 1"
-          alt=""
-        />
-        <div class="news-item-left">
-          <div class="info-top">
-            <img :src="item.avatar" class="icon" alt="" />
-            <p class="name">{{ item.userName }}</p>
-          </div>
-          <p class="title">{{ item.title }}</p>
-          <div class="info">
-            <div>
-              <span>{{ item.townName }}</span>
-              <!-- <p>{{ item.dis_count }} 评论</p> -->
-              <!-- <p>{{ item.zan_count }} 点赞</p> -->
-              <span
-                >阅读
-                {{
-                  Number(item.basic_view) + Number(item.mult * item.view_count)
-                }}</span
-              >
-            </div>
-            <p class="time">{{ $commonJs.getTime(item.intime) }}</p>
-          </div>
+        <van-cell @click="lmLink(index)">
+          <img :src="item.img" alt="" class="icon" />
+          <p class="channel">{{ item.name }}</p>
+        </van-cell>
+        <div
+          class="top"
+          v-if="item.newsList.length > 0"
+          @click="article(item.hotNews.topicId)"
+        >
+          <img :src="JSON.parse(item.hotNews.img)[0].url" alt="" />
+          <p class="title">{{ item.hotNews.title }}</p>
         </div>
-        <!-- <div
-          class="news-item-right"
-          :style="{
-            backgroundImage: 'url(' + imgSiteUrl + parseAdminImg(item.img) + ')'
-          }"
-          v-if="item.user_id == 1"
-        ></div>
-        <div
-          class="news-item-right"
-          :style="{
-            backgroundImage:
-              'url(' +
-              imgSiteUrl +
-              parseFileName(item.img)[0] +
-              ',w_330,h_330.' +
-              parseFileName(item.img)[1] +
-              ')'
-          }"
-          v-if="item.user_id != 1"
-        ></div> -->
-
-        <div
-          class="news-item-right"
-          :style="{
-            backgroundImage: 'url(' + parseJsonImg(item.img) + ')'
-          }"
-        ></div>
-      </van-cell>
-    </van-list>
+        <ul v-if="item.newsList.length > 0">
+          <li
+            v-for="(e, i) in item.newsList"
+            :key="i"
+            @click="article(e.topicId)"
+          >
+            <p class="list-title van-multi-ellipsis--l2">{{ e.title }}</p>
+            <img :src="JSON.parse(e.img)[0].url" alt="" class="thumb" />
+          </li>
+        </ul>
+      </div>
+    </van-pull-refresh>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .news-list {
+  margin-left: 10px;
+  margin-right: 10px;
   margin-bottom: 1.333333rem;
 }
-
-.news-item {
-  padding: 0;
-  // margin: 8px 0;
+.item-wrapper {
+  padding: 0 10px;
+  border-radius: 6px;
+  overflow: hidden;
   background: #fff;
+  margin-bottom: 30px;
 }
-
-.news-item > div {
-  padding: 5px 10px;
+.icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+.channel {
+  display: inline-block;
+  margin-left: 10px;
+  @include fontSize(14px);
+}
+.top {
   position: relative;
-
-  .istop {
+  img {
+    width: 335px;
+    height: 150px;
+  }
+  .title {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 40px;
-    z-index: 99;
+    bottom: 10px;
+    color: #fff;
+    @include fontSize(16px);
+    padding: 0 20px;
   }
-
-  .news-item-left {
-    display: inline-block;
-    vertical-align: top;
-    width: 265px;
-
-    .info-top {
-      position: relative;
-      display: flex;
-      align-items: center;
-      font-size: 12PX; /*no*/
-      [data-dpr="2"] & {
-        font-size: 24PX; /*no*/
-      }
-
-      [data-dpr="3"] & {
-        font-size: 36PX; /*no*/
-      }
-
-      .icon {
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        margin: 0;
-      }
-
-      .name {
-        color: #acacac;
-        margin-left: 8px;
-        width: 125px;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        white-space: nowrap;
-      }
-    }
-
-    .title {
-      color: #323233;
-      height: 45px;
-      font-size: 14PX; /*no*/
-      [data-dpr="2"] & {
-        font-size: 28PX; /*no*/
-      }
-
-      [data-dpr="3"] & {
-        font-size: 42PX; /*no*/
-      }
-
-      margin-bottom: 6px;
-    }
-  }
-
-  .news-item-right {
-    display: inline-block;
-    width: 80px;
-    height: 80px;
-    margin-left: 10px;
-    margin-top: 12px;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-  }
-
-  .info {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: #acacac;
-    font-size: 12PX; /*no*/
-    [data-dpr="2"] & {
-      font-size: 24PX; /*no*/
-    }
-
-    [data-dpr="3"] & {
-      font-size: 36PX; /*no*/
-    }
-
-    span {
-      margin-right: 8px;
-    }
-  }
+}
+li:not(:last-child) {
+  border-bottom: 1px solid #eee;
+}
+.list-title {
+  float: left;
+  width: calc(100% - 70px);
+  height: 50px;
+  line-height: 25px;
+  padding: 10px 0;
+  @include fontSize(14px);
+}
+.thumb {
+  width: 50px;
+  height: 50px;
+  padding: 10px 0;
 }
 </style>
 
@@ -183,75 +95,53 @@
 export default {
   data() {
     return {
-      list: [],
-      loading: false,
-      finished: false,
-      error: false,
-      page: 1,
-      townList: {},
-      imgSiteUrl: "",
-      townName: ""
+      isLoading: false,
+      channelList: []
     };
   },
+  mounted() {
+    this.onRefresh();
+  },
   methods: {
-    onLoad() {
-      //   this.imgSiteUrl = imgSiteUrl;
+    onRefresh() {
       this.axios
         // .post("/wechat/tieList", {
-        .get(process.env.VUE_APP_URL + "/1.json", {
-          form: {
-            page: this.page++,
-            pageSize: 10
-          }
-        })
+        .get(process.env.VUE_APP_URL + "/2.json")
         .then(response => {
-          // let data = response.data;
-          let data = response.data;
-          this.list.push.apply(this.list, data.list);
-          this.townList = data.townNameList;
-          //this.townName = data.townName;
-          this.loading = false;
-          if (data.list.length < 10) {
-            this.finished = true;
+          console.log(response);
+          var data = response.data;
+          this.channelList = [];
+          for (let i = 0; i < 3; i++) {
+            var arr = [];
+            for (let j = 1; j < data[i].list.length; j++) {
+              arr.push(data[i].list[j]);
+            }
+            console.log(arr);
+
+            this.channelList.push({
+              name: data[i].name,
+              img: JSON.parse(data[i].img)[0].url,
+              id: data[i].hobbyId,
+              hotNews: data[i].list[0],
+              newsList: arr
+            });
+            console.log(this.channelList);
           }
+          this.isLoading = false;
         })
         .catch(() => {
           this.error = true;
-          this.loading = true;
+          this.isLoading = false;
         });
     },
-    // getTownName(userType, townName) {
-    //   //   let townName = this.townList[townId];
-
-    //   // if (userType == 1) {
-    //   //   //return this.townName + "头条号";
-    //   //   return townName + "头条号";
-    //   // } else {
-    //   //   return "文化礼堂";
-    //   // }
-    //   return townName;
-    // },
     article(id) {
+      console.log(id);
       this.$router.push({ name: "article", params: { id } });
     },
-    // parseFileName(fileName) {
-    //   let a = [];
-    //   a[0] = fileName.substring(0, fileName.lastIndexOf("."));
-    //   a[1] = fileName.substr(fileName.lastIndexOf(".") + 1);
-    //   return a;
-    // },
-    // parseAdminImg(img) {
-    //   let a = [];
-    //   let jsonInfo = JSON.parse(img);
-    //   let url = jsonInfo[0]["url"];
-    //   a[0] = url.substring(0, url.lastIndexOf("."));
-    //   a[1] = url.substr(url.lastIndexOf(".") + 1);
-    //   return a[0] + ",w_330,h_330." + a[1];
-    // },
-
-    parseJsonImg(jsonImg) {
-      let img = JSON.parse(jsonImg);
-      return img[0]["url"];
+    lmLink(i) {
+      console.log(i);
+      this.$store.commit("setLmActive", i);
+      this.$router.push({ name: "lm" });
     }
   }
 };

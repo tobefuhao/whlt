@@ -14,13 +14,7 @@
 .confirm {
   display: block;
   margin: 32px auto;
-  font-size: 16PX; /*no*/
-  [data-dpr="2"] & {
-    font-size: 32PX; /*no*/
-  }
-  [data-dpr="3"] & {
-    font-size: 48PX; /*no*/
-  }
+  @include fontSize(16px);
 }
 </style>
 

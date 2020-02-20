@@ -29,26 +29,14 @@
   .van-tabs__wrap {
     background: #fff;
     padding: 8px 0;
-    font-size: 14PX; /*no*/
-    [data-dpr="2"] & {
-      font-size: 28PX; /*no*/
-    }
-    [data-dpr="3"] & {
-      font-size: 42PX; /*no*/
-    }
+    @include fontSize(14px);
   }
   .van-tabs__content {
     margin-top: 16px;
   }
   .van-tree-select {
-    font-size: 14PX; /*no*/
     height: 12.7rem !important;
-    [data-dpr="2"] & {
-      font-size: 28PX; /*no*/
-    }
-    [data-dpr="3"] & {
-      font-size: 42PX; /*no*/
-    }
+    @include fontSize(14px);
     .van-icon-checked {
       font-size: 0 !important; /*no*/
     }
@@ -73,14 +61,7 @@
     width: 100%;
     height: 40px;
     line-height: 40px;
-    font-size: 16PX; /*no*/
-    [data-dpr="2"] & {
-      font-size: 32PX; /*no*/
-    }
-
-    [data-dpr="3"] & {
-      font-size: 48PX; /*no*/
-    }
+    @include fontSize(16px);
   }
 }
 </style>

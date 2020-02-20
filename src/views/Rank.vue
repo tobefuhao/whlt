@@ -30,28 +30,14 @@
   color: #ababab;
   background: #fff;
   padding: 10px 0;
-  font-size: 14PX; /*no*/
-  [data-dpr="2"] & {
-    font-size: 28PX; /*no*/
-  }
-
-  [data-dpr="3"] & {
-    font-size: 42PX; /*no*/
-  }
+  @include fontSize(14px);
 }
 .item {
   padding: 10px 0;
   width: 90%;
   margin: auto;
   border-bottom: 1px solid #ccc;
-  font-size: 14PX; /*no*/
-  [data-dpr="2"] & {
-    font-size: 28PX; /*no*/
-  }
-
-  [data-dpr="3"] & {
-    font-size: 42PX; /*no*/
-  }
+  @include fontSize(14px);
 }
 .no {
   float: left;

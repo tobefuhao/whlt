@@ -16,6 +16,19 @@ module.exports = {
             remUnit: 37.5
           })
         ]
+      },
+      // 给 sass-loader 传递选项
+      sass: {
+        // @/ 是 src/ 的别名
+        // 所以这里假设你有 `src/variables.sass` 这个文件
+        // 注意：在 sass-loader v7 中，这个选项名是 "data"
+        prependData: `@import "~@assets/scss/mixin.scss";`
+      },
+      scss: {
+        // @/ 是 src/ 的别名
+        // 所以这里假设你有 `src/variables.sass` 这个文件
+        // 注意：在 sass-loader v7 中，这个选项名是 "data"
+        prependData: `@import "~@assets/scss/mixin.scss";`
       }
     }
   },
@@ -24,7 +37,7 @@ module.exports = {
   // 配置解析别名
   chainWebpack: config => {
     config.resolve.alias
-      .set("@$", resolve("src"))
+      .set("@", resolve("src"))
       .set("@assets", resolve("src/assets"))
       .set("@components", resolve("src/components"))
       .set("@static", resolve("src/static"));

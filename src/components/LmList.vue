@@ -91,14 +91,7 @@
       position: relative;
       display: flex;
       align-items: center;
-      font-size: 12PX; /*no*/
-      [data-dpr="2"] & {
-        font-size: 24PX; /*no*/
-      }
-
-      [data-dpr="3"] & {
-        font-size: 36PX; /*no*/
-      }
+      @include fontSize(12px);
 
       .icon {
         width: 20px;
@@ -120,14 +113,7 @@
     .title {
       color: #323233;
       // height: 50px;
-      font-size: 14PX; /*no*/
-      [data-dpr="2"] & {
-        font-size: 28PX; /*no*/
-      }
-
-      [data-dpr="3"] & {
-        font-size: 42PX; /*no*/
-      }
+      @include fontSize(14px);
 
       margin-bottom: 6px;
     }
@@ -148,14 +134,7 @@
     align-items: center;
     justify-content: space-between;
     color: #acacac;
-    font-size: 12PX; /*no*/
-    [data-dpr="2"] & {
-      font-size: 24PX; /*no*/
-    }
-
-    [data-dpr="3"] & {
-      font-size: 36PX; /*no*/
-    }
+    @include fontSize(12px);
 
     span {
       margin-right: 8px;

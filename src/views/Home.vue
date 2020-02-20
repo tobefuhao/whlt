@@ -39,14 +39,7 @@
 <style lang="scss" scoped>
 .home {
   background: #eee;
-  font-size: 12PX; /*no*/
-  [data-dpr="2"] & {
-    font-size: 24PX; /*no*/
-  }
-
-  [data-dpr="3"] & {
-    font-size: 36PX; /*no*/
-  }
+  @include fontSize(12px);
 
   // & > .content {
   //   margin-top: 1.466667rem;

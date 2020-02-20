@@ -27,14 +27,7 @@
 }
 
 .futext {
-  font-size: 16PX; /*no*/
-  [data-dpr="2"] & {
-    font-size: 32PX; /*no*/
-  }
-
-  [data-dpr="3"] & {
-    font-size: 48PX; /*no*/
-  }
+  @include fontSize(16px);
 }
 </style>
 
@@ -47,13 +40,7 @@
 .title {
   color: #444;
   font-weight: bold;
-  font-size: 20PX; /*no*/
-  [data-dpr="2"] & {
-    font-size: 40PX; /*no*/
-  }
-  [data-dpr="3"] & {
-    font-size: 60PX; /*no*/
-  }
+  @include fontSize(20px);
 }
 
 .top {
@@ -71,41 +58,21 @@
 
   .editor {
     color: #101010;
-    font-size: 14PX; /*no*/
-    [data-dpr="2"] & {
-      font-size: 28PX; /*no*/
-    }
-    [data-dpr="3"] & {
-      font-size: 42PX; /*no*/
-    }
+    @include fontSize(14px);
   }
 
   .time {
     color: #b1b1b1;
-    font-size: 12PX; /*no*/
-    [data-dpr="2"] & {
-      font-size: 24PX; /*no*/
-    }
-    [data-dpr="3"] & {
-      font-size: 36PX; /*no*/
-    }
+    @include fontSize(12px);
   }
 }
 
 .content {
   .text {
     color: #444;
-    text-indent: 32PX; /*no*/
+    text-indent: 32px; /*no*/
     margin: 8px 0;
-    font-size: 16PX; /*no*/
-    [data-dpr="2"] & {
-      font-size: 32PX; /*no*/
-      text-indent: 64PX; /*no*/
-    }
-    [data-dpr="3"] & {
-      font-size: 48PX; /*no*/
-      text-indent: 96PX; /*no*/
-    }
+    @include fontSize(16px);
   }
 
   img {

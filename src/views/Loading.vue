@@ -1,7 +1,7 @@
 <template>
   <div class="loading">
     <img src="@assets/images/4.jpg" alt="" />
-    <p class="countDown">{{ countDown }}S</p>
+    <p class="countDown" @click="onClick">{{ countDown }} 跳过</p>
   </div>
 </template>
 
@@ -20,13 +20,7 @@
   text-align: center;
   line-height: 30px;
   color: #fff;
-  font-size: 16PX; /*no*/
-  [data-dpr="2"] & {
-    font-size: 32PX; /*no*/
-  }
-  [data-dpr="3"] & {
-    font-size: 48PX; /*no*/
-  }
+  @include fontSize(16px);
 }
 img {
   position: fixed;
@@ -49,6 +43,11 @@ export default {
     setTimeout(() => {
       this.$router.push({ name: "home" });
     }, 5000);
+  },
+  methods: {
+    onClick() {
+      this.$router.push({ name: "home" });
+    }
   }
 };
 </script>

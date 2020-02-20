@@ -2,35 +2,81 @@
   <div class="auditoriumInfo">
     <div class="loading" v-show="flag">
       <img src="@assets/images/4.jpg" alt="" />
-      <p class="countDown">{{ countDown }}S</p>
+      <p class="countDown" @click="onClick">{{ countDown }} 跳过</p>
     </div>
     <img src="img/top.jpg" class="top" alt="" />
     <ul class="nav clearfix">
-      <li>最新动态</li>
+      <li @click="contentFlag = true">最新动态</li>
       <li @click="show = true">基本介绍</li>
-      <li>场地预约</li>
+      <li @click="contentFlag = false">礼堂故事</li>
       <li>场地测评</li>
     </ul>
     <div class="content">
-      <div
-        class="item"
-        v-for="(item, index) in list"
-        :key="index"
-        @click="article(item.topicId)"
-      >
-        <p class="title">{{ item.title }}</p>
-        <div class="imgList clearfix">
-          <img
-            :src="img.url"
-            alt=""
-            v-for="(img, i) in JSON.parse(item.img)"
-            :key="i"
-          />
-        </div>
-        <p class="info clearfix">
-          <span class="name">{{ item.userName }}</span>
-          <span class="time">{{ $commonJs.getTime(item.intime) }}</span>
-        </p>
+      <div v-show="contentFlag">
+        <van-cell
+          class="item"
+          v-for="(item, index) in list"
+          :key="index"
+          @click="article(item.topicId)"
+        >
+          <div class="item-left">
+            <!-- <div class="info-top">
+              <img :src="item.avatar" class="icon" alt="" />
+              <p class="name">{{ item.userName }}</p>
+            </div> -->
+            <p class="title van-multi-ellipsis--l2">{{ item.title }}</p>
+            <p class="time">{{ $commonJs.getTime(item.intime) }}</p>
+          </div>
+          <div
+            class="item-right"
+            :style="{
+              backgroundImage: 'url(' + JSON.parse(item.img)[0].url + ')'
+            }"
+          ></div>
+        </van-cell>
+        <!-- <div
+          class="news-item"
+          v-for="(item, index) in list"
+          :key="index"
+          @click="article(item.topicId)"
+        >
+          <p class="title van-multi-ellipsis--l2">{{ item.title }}</p>
+          <div class="imgList clearfix">
+            <img
+              :src="img.url"
+              alt=""
+              v-for="(img, i) in JSON.parse(item.img)"
+              :key="i"
+            />
+          </div>
+          <p class="info clearfix">
+            <span class="name">{{ item.userName }}</span>
+            <span class="time">{{ $commonJs.getTime(item.intime) }}</span>
+          </p>
+        </div> -->
+      </div>
+
+      <div v-show="!contentFlag">
+        <van-cell
+          class="item"
+          v-for="(item, index) in list"
+          :key="index"
+          @click="article(item.topicId)"
+        >
+          <div class="item-left">
+            <div class="info-top">
+              <img :src="item.avatar" class="icon" alt="" />
+              <p class="name">{{ item.userName }}</p>
+            </div>
+            <p class="title van-multi-ellipsis--l2">{{ item.title }}</p>
+          </div>
+          <div
+            class="item-right"
+            :style="{
+              backgroundImage: 'url(' + JSON.parse(item.img)[0].url + ')'
+            }"
+          ></div>
+        </van-cell>
       </div>
     </div>
     <van-action-sheet
@@ -46,6 +92,8 @@
 <style lang="scss" scoped>
 .loading {
   position: relative;
+  z-index: 999;
+
   img {
     position: fixed;
     width: 100%;
@@ -63,13 +111,7 @@
   text-align: center;
   line-height: 30px;
   color: #fff;
-  font-size: 16PX; /*no*/
-  [data-dpr="2"] & {
-    font-size: 32PX; /*no*/
-  }
-  [data-dpr="3"] & {
-    font-size: 48PX; /*no*/
-  }
+  @include fontSize(16px);
 }
 
 .top {
@@ -83,81 +125,112 @@
     width: 93px;
     text-align: center;
     line-height: 30px;
-    font-size: 14PX; /*no*/
-    [data-dpr="2"] & {
-      font-size: 28PX; /*no*/
-    }
-    [data-dpr="3"] & {
-      font-size: 42PX; /*no*/
-    }
+    @include fontSize(14px);
     &:not(:last-child) {
       border-right: 1px solid #fff;
     }
   }
 }
-.item {
-  background: #fff;
-  padding: 16px;
-  margin: 8px;
-  .title {
-    margin-bottom: 10px;
-    font-size: 16PX; /*no*/
-    [data-dpr="2"] & {
-      font-size: 32PX; /*no*/
-    }
-    [data-dpr="3"] & {
-      font-size: 48PX; /*no*/
-    }
-  }
-  .imgList img {
-    width: 98px;
-    margin: 5px;
-    float: left;
-  }
-  .info {
-    .name {
-      float: left;
-      font-size: 14PX; /*no*/
-      [data-dpr="2"] & {
-        font-size: 28PX; /*no*/
-      }
-      [data-dpr="3"] & {
-        font-size: 42PX; /*no*/
-      }
-    }
-    .time {
-      float: right;
-      font-size: 14PX; /*no*/
-      [data-dpr="2"] & {
-        font-size: 28PX; /*no*/
-      }
-      [data-dpr="3"] & {
-        font-size: 42PX; /*no*/
-      }
-    }
-  }
-}
+// .news-item {
+//   background: #fff;
+//   padding: 16px;
+//   margin: 8px;
+//   .title {
+//     margin-bottom: 10px;
+//     @include fontSize(14px);
+//   }
+//   .imgList img {
+//     width: 98px;
+//     margin: 5px;
+//     float: left;
+//   }
+//   .info {
+//     .name {
+//       float: left;
+//       @include fontSize(12px);
+//     }
+//     .time {
+//       float: right;
+//       @include fontSize(12px);
+//     }
+//   }
+// }
 .van-action-sheet__header {
   font-weight: bold;
   & p {
-    font-size: 18PX; /*no*/
-    [data-dpr="2"] & {
-      font-size: 36PX; /*no*/
-    }
-    [data-dpr="3"] & {
-      font-size: 54PX; /*no*/
-    }
+    @include fontSize(18px);
   }
 }
 .van-action-sheet__content {
   padding: 0px 16px;
   & p {
-    font-size: 16PX; /*no*/
-    [data-dpr="2"] & {
-      font-size: 32PX; /*no*/
+    @include fontSize(16px);
+  }
+}
+.item:not(:last-child) {
+  border-bottom: 1px solid #eee;
+}
+.item > div {
+  position: relative;
+  .time {
+    @include fontSize(12px);
+  }
+  .item-left {
+    display: inline-block;
+    vertical-align: top;
+    width: 250px;
+
+    .info-top {
+      position: relative;
+      display: flex;
+      align-items: center;
+      @include fontSize(12px);
+
+      .icon {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin: 0;
+      }
+
+      .name {
+        color: #acacac;
+        margin-left: 8px;
+        width: 125px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
     }
-    [data-dpr="3"] & {
-      font-size: 48PX; /*no*/
+
+    .title {
+      color: #323233;
+      // height: 50px;
+      @include fontSize(14px);
+
+      margin-bottom: 6px;
+    }
+  }
+
+  .item-right {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    margin-left: 10px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+
+  .info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #acacac;
+    @include fontSize(12px);
+
+    span {
+      margin-right: 8px;
     }
   }
 }
@@ -171,6 +244,7 @@ export default {
       countDown: "5",
       list: [],
       show: false,
+      contentFlag: true,
       info: {
         name: "高塘村",
         content:
@@ -201,6 +275,9 @@ export default {
     },
     article(id) {
       this.$router.push({ name: "article", params: { id } });
+    },
+    onClick() {
+      this.flag = false;
     }
   }
 };

@@ -50,13 +50,7 @@ li {
   }
   .title {
     text-align: center;
-    font-size: 14PX; /*no*/
-    [data-dpr="2"] & {
-      font-size: 28PX; /*no*/
-    }
-    [data-dpr="3"] & {
-      font-size: 42PX; /*no*/
-    }
+    @include fontSize(14px);
   }
 }
 </style>
@@ -114,7 +108,7 @@ export default {
     },
 
     search() {
-      this.list=[];
+      this.list = [];
       this.axios
         //   .post("/wechat/hobbyTieList", {
         //     form: form

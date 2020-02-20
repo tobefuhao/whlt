@@ -79,13 +79,7 @@
     justify-content: flex-end;
     align-items: center;
     background: #fff;
-    font-size: 14PX; /*no*/
-    [data-dpr="2"] & {
-      font-size: 28PX; /*no*/
-    }
-    [data-dpr="3"] & {
-      font-size: 46PX; /*no*/
-    }
+    @include fontSize(14px);
     p:first-child {
       color: #486a98;
       margin-right: 18px;
@@ -97,7 +91,7 @@
       padding: 3px 6px;
       color: #486a98;
       border: 1px solid #3792d2; /*no*/
-      border-radius: 5PX; /*no*/
+      border-radius: 5px; /*no*/
     }
   }
   .name {
@@ -105,25 +99,13 @@
     padding-left: 15px;
     padding-bottom: 6px;
     background: #fff;
-    font-size: 18PX; /*no*/
-    [data-dpr="2"] & {
-      font-size: 36PX; /*no*/
-    }
-    [data-dpr="3"] & {
-      font-size: 60PX; /*no*/
-    }
+    @include fontSize(18px);
   }
   .number {
     padding-left: 15px;
     color: #a6a6a5;
     background: #fff;
-    font-size: 14PX; /*no*/
-    [data-dpr="2"] & {
-      font-size: 28PX; /*no*/
-    }
-    [data-dpr="3"] & {
-      font-size: 46PX; /*no*/
-    }
+    @include fontSize(14px);
     span {
       color: #436795;
       margin-right: 2px;
@@ -142,13 +124,7 @@
       padding-bottom: 3px;
       margin-left: 15px;
       display: inline-block;
-      font-size: 14PX; /*no*/
-      [data-dpr="2"] & {
-        font-size: 28PX; /*no*/
-      }
-      [data-dpr="3"] & {
-        font-size: 46PX; /*no*/
-      }
+      @include fontSize(14px);
     }
     .dynamic-list {
       background: #f4f5f6;
@@ -162,24 +138,12 @@
       p:first-child {
         margin-bottom: 4px;
         color: #212121;
-        font-size: 16PX; /*no*/
-        [data-dpr="2"] & {
-          font-size: 32PX; /*no*/
-        }
-        [data-dpr="3"] & {
-          font-size: 52PX; /*no*/
-        }
+        @include fontSize(16px);
       }
       p:last-child {
         text-align: right;
         margin-top: 2px;
-        font-size: 12PX; /*no*/
-        [data-dpr="2"] & {
-          font-size: 24PX; /*no*/
-        }
-        [data-dpr="3"] & {
-          font-size: 40PX; /*no*/
-        }
+        @include fontSize(12px);
         span {
           margin-right: 6px;
           color: #a6a6a5;
@@ -190,13 +154,7 @@
   .empty {
     text-align: center;
     margin-top: 150px;
-    font-size: 16PX; /*no*/
-    [data-dpr="2"] & {
-      font-size: 32PX; /*no*/
-    }
-    [data-dpr="3"] & {
-      font-size: 52PX; /*no*/
-    }
+    @include fontSize(16px);
   }
 }
 </style>

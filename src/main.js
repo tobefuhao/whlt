@@ -21,7 +21,8 @@ Vue.config.productionTip = false;
 // Vue.prototype.$wx = wx;
 
 // 通用外部文件
-import "@assets/css/common.css";
+import "@assets/scss/mixin.scss";
+import "@assets/scss/common.scss";
 import commonJs from "@assets/js/common";
 Vue.prototype.$commonJs = commonJs;
 

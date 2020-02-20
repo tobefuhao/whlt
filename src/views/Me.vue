@@ -47,14 +47,7 @@
   }
 
   .name {
-    font-size: 16PX; /*no*/
-    [data-dpr="2"] & {
-      font-size: 32PX; /*no*/
-    }
-
-    [data-dpr="3"] & {
-      font-size: 48PX; /*no*/
-    }
+    @include fontSize(16px);
   }
 
   .top-row {
@@ -66,26 +59,12 @@
     }
 
     p:first-child {
-      font-size: 16PX; /*no*/
-      [data-dpr="2"] & {
-        font-size: 32PX; /*no*/
-      }
-
-      [data-dpr="3"] & {
-        font-size: 48PX; /*no*/
-      }
+      @include fontSize(16px);
     }
 
     p:last-child {
       color: #616161;
-      font-size: 12PX; /*no*/
-      [data-dpr="2"] & {
-        font-size: 24PX; /*no*/
-      }
-
-      [data-dpr="3"] & {
-        font-size: 36PX; /*no*/
-      }
+      @include fontSize(12px);
     }
   }
 
@@ -101,14 +80,7 @@
 
     p {
       color: rgba(37, 36, 37, 1);
-      font-size: 14PX; /*no*/
-      [data-dpr="2"] & {
-        font-size: 28PX; /*no*/
-      }
-
-      [data-dpr="3"] & {
-        font-size: 42PX; /*no*/
-      }
+      @include fontSize(14px);
     }
   }
 

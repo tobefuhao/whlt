@@ -54,25 +54,13 @@
   .van-dialog {
     .van-dialog__header {
       margin-bottom: 16px;
-      font-size: 16PX; /*no*/
-      [data-dpr="2"] & {
-        font-size: 32PX; /*no*/
-      }
-      [data-dpr="3"] & {
-        font-size: 52PX; /*no*/
-      }
+      @include fontSize(16px);
     }
     input {
       background: #e0e0e0;
       padding: 6px 8px;
-      border-radius: 10PX; /*no*/
-      font-size: 14PX; /*no*/
-      [data-dpr="2"] & {
-        font-size: 28PX; /*no*/
-      }
-      [data-dpr="3"] & {
-        font-size: 46PX; /*no*/
-      }
+      border-radius: 10px; /*no*/
+      @include fontSize(14px);
     }
   }
 }
