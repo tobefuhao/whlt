@@ -13,7 +13,7 @@
   position: absolute;
   right: 30px;
   top: 30px;
-  background: rgba($color: #000000, $alpha: 0.3);
+  background: rgba(255, 255, 255, 0.3);
   border-radius: 5px;
   width: 70px;
   height: 30px;

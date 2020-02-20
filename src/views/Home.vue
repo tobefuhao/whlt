@@ -39,7 +39,7 @@
 <style lang="scss" scoped>
 .home {
   background: #eee;
-  @include fontSize(12px);
+  @include fontSize(12PX);
 
   // & > .content {
   //   margin-top: 1.466667rem;

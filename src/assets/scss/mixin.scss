@@ -1,14 +1,10 @@
 @mixin fontSize($size) {
-  font-size: $size;
-
-  /*no*/
+  font-size: $size;/*no*/
   [data-dpr="2"] & {
-    font-size: $size*2;
-    /*no*/
+    font-size: $size*2;/*no*/
   }
 
   [data-dpr="3"] & {
-    font-size: $size*3;
-    /*no*/
+    font-size: $size*3;/*no*/
   }
 }

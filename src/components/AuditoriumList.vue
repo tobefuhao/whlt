@@ -50,7 +50,7 @@ li {
   }
   .title {
     text-align: center;
-    @include fontSize(14px);
+    @include fontSize(14PX);
   }
 }
 </style>

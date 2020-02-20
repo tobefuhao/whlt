@@ -1,6 +1,6 @@
 <template>
   <div id="footer" class="footer">
-    <van-tabbar v-model="active" active-color="#FB575C">
+    <van-tabbar v-model="active" active-color="#FB575C" safe-area-inset-bottom>
       <van-tabbar-item
         icon="wap-home-o"
         replace

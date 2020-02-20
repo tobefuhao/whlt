@@ -104,7 +104,7 @@
   position: absolute;
   right: 30px;
   top: 30px;
-  background: rgba($color: #000000, $alpha: 0.3);
+  background: rgba(255, 255, 255, 0.3);
   border-radius: 5px;
   width: 70px;
   height: 30px;
@@ -242,6 +242,7 @@ export default {
     return {
       flag: true,
       countDown: "5",
+      countInterval: "",
       list: [],
       show: false,
       contentFlag: true,
@@ -254,11 +255,12 @@ export default {
   },
   mounted() {
     this.auditorium();
-    setInterval(() => {
+    this.countInterval = setInterval(() => {
       this.countDown--;
     }, 1000);
     setTimeout(() => {
       this.flag = false;
+      clearInterval(this.countInterval);
     }, 5000);
   },
   methods: {
@@ -278,6 +280,7 @@ export default {
     },
     onClick() {
       this.flag = false;
+      clearInterval(this.countInterval);
     }
   }
 };

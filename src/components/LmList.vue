@@ -91,7 +91,7 @@
       position: relative;
       display: flex;
       align-items: center;
-      @include fontSize(12px);
+      @include fontSize(12PX);
 
       .icon {
         width: 20px;
@@ -113,7 +113,7 @@
     .title {
       color: #323233;
       // height: 50px;
-      @include fontSize(14px);
+      @include fontSize(14PX);
 
       margin-bottom: 6px;
     }
@@ -134,7 +134,7 @@
     align-items: center;
     justify-content: space-between;
     color: #acacac;
-    @include fontSize(12px);
+    @include fontSize(12PX);
 
     span {
       margin-right: 8px;

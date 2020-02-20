@@ -57,7 +57,7 @@
 .channel {
   display: inline-block;
   margin-left: 10px;
-  @include fontSize(14px);
+  @include fontSize(14PX);
 }
 .top {
   position: relative;
@@ -69,7 +69,7 @@
     position: absolute;
     bottom: 10px;
     color: #fff;
-    @include fontSize(16px);
+    @include fontSize(16PX);
     padding: 0 20px;
   }
 }
@@ -82,7 +82,7 @@ li:not(:last-child) {
   height: 50px;
   line-height: 25px;
   padding: 10px 0;
-  @include fontSize(14px);
+  @include fontSize(14PX);
 }
 .thumb {
   width: 50px;
