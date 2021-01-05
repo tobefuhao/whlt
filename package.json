@@ -13,7 +13,7 @@
   "main": ".eslintrc.js",
   "dependencies": {
     "amfe-flexible": "^2.2.1",
-    "axios": "^0.19.1",
+    "axios": "^0.21.1",
     "core-js": "^3.4.4",
     "css-loader": "^3.4.2",
     "mescroll.js": "^1.4.1",
